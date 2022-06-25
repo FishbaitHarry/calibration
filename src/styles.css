@@ -1,15 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.dashboard {
+  background: gray;
+  box-shadow: 2px 2px 2px black;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+.progress-bar {
+  font-family: 'Roboto Mono', sans-serif;
+  padding: 16px;
+}
+.progress-dot {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 3px;
+  background-color: currentColor;
+}
+.option-chooser {
+  display: flex;
+  justify-content: space-around;
+}
+.option {
+  width: 120px;
+  height: 180px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px black;
+}
 .symbol {
   border: 1px solid black;
-  margin: 1px;
+  margin: 5px auto;
+  border-color: currentColor;
+  background-color: currentColor;
 }
 .red {
-  border-color: red;
+  color: red;
 }
 .green {
-  border-color: green;
+  color: green;
 }
 .blue {
-  border-color: blue;
+  color: blue;
+}
+.yellow {
+  color: yellow;
 }
 .circle {
   height: 10px;

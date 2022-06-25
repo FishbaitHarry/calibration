@@ -45,7 +45,11 @@ export function reducer(state, action) {
     return reducer({...state, level: Math.max(state.level - 1, 1)}, 'GENERATE_LEVEL');
   }
   if (action == 'NEXT_LEVEL') {
-    return reducer({...state, level: Math.min(state.level + 1, MAX_LEVEL)}, 'GENERATE_LEVEL');
+    if (state.level == MAX_LEVEL) {
+      playSound('gameover');
+      return reducer(null, 'NEW_GAME')
+    }
+    return reducer({...state, level: state.level + 1}, 'GENERATE_LEVEL');
   }
   if (action == 'GENERATE_LEVEL') {
     var newState = {
@@ -58,8 +62,10 @@ export function reducer(state, action) {
   if (typeof action == 'number') {
     var chosenOption = state.options[action];
     if (chosenOption.correct) {
+      playSound('success');
       return reducer(state, 'NEXT_LEVEL');
     } else {
+      playSound('failure');
       return reducer(state, 'PREV_LEVEL');
     }
   }
@@ -112,4 +118,10 @@ function randomOption() {
     number: getRand(NUMBERS),
     color: getRand(COLORS),
   };
+}
+
+function playSound(id) {
+  let el = document.getElementById(id);
+  el.currentTime = 0;
+  el.play();
 }
