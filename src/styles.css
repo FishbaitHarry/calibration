@@ -33,7 +33,6 @@
   border: 1px solid black;
   margin: 5px auto;
   border-color: currentColor;
-  background-color: currentColor;
 }
 .red {
   color: red;
@@ -52,6 +51,7 @@
   width: 10px;
   border-width: 5px;
   border-radius: 20px;
+  background-color: currentColor;
 }
 .triangle {
   height: 0px;
@@ -64,4 +64,5 @@
   height: 10px;
   width: 10px;
   border-width: 5px;
+  background-color: currentColor;
 }
